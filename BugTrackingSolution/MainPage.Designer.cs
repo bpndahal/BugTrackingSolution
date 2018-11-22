@@ -103,37 +103,40 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("logoutToolStripMenuItem.Image")));
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(95, 25);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripMenuItem.Image")));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 25);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportToolStripMenuItem.Image")));
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(73, 25);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // bugSolutionToolStripMenuItem
             // 
             this.bugSolutionToolStripMenuItem.Name = "bugSolutionToolStripMenuItem";
-            this.bugSolutionToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.bugSolutionToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.bugSolutionToolStripMenuItem.Text = "Bug Solution";
             this.bugSolutionToolStripMenuItem.Click += new System.EventHandler(this.bugSolutionToolStripMenuItem_Click);
             // 
             // bugEntryToolStripMenuItem
             // 
             this.bugEntryToolStripMenuItem.Name = "bugEntryToolStripMenuItem";
-            this.bugEntryToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.bugEntryToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.bugEntryToolStripMenuItem.Text = "Bug Entry";
             this.bugEntryToolStripMenuItem.Click += new System.EventHandler(this.bugEntryToolStripMenuItem_Click);
             // 
@@ -143,8 +146,9 @@
             this.bugEntryToolStripMenuItem,
             this.bugSolutionToolStripMenuItem});
             this.bugToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bugToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bugToolStripMenuItem.Image")));
             this.bugToolStripMenuItem.Name = "bugToolStripMenuItem";
-            this.bugToolStripMenuItem.Size = new System.Drawing.Size(51, 25);
+            this.bugToolStripMenuItem.Size = new System.Drawing.Size(71, 25);
             this.bugToolStripMenuItem.Text = "Bug";
             // 
             // manageMemberToolStripMenuItem
@@ -167,8 +171,9 @@
             this.manageProjectToolStripMenuItem,
             this.manageMemberToolStripMenuItem});
             this.projectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("projectToolStripMenuItem.Image")));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(94, 25);
             this.projectToolStripMenuItem.Text = "Project";
             // 
             // manageMamberToolStripMenuItem
@@ -183,8 +188,9 @@
             this.memberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageMamberToolStripMenuItem});
             this.memberToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("memberToolStripMenuItem.Image")));
             this.memberToolStripMenuItem.Name = "memberToolStripMenuItem";
-            this.memberToolStripMenuItem.Size = new System.Drawing.Size(85, 25);
+            this.memberToolStripMenuItem.Size = new System.Drawing.Size(105, 25);
             this.memberToolStripMenuItem.Text = "Member";
             // 
             // manageUserRoleToolStripMenuItem
@@ -207,12 +213,14 @@
             this.manageUserToolStripMenuItem,
             this.manageUserRoleToolStripMenuItem});
             this.userToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("userToolStripMenuItem.Image")));
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(55, 25);
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(75, 25);
             this.userToolStripMenuItem.Text = "User";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem,
@@ -269,9 +277,11 @@
             // cloneToGitHubToolStripMenuItem
             // 
             this.cloneToGitHubToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.cloneToGitHubToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cloneToGitHubToolStripMenuItem.Image")));
             this.cloneToGitHubToolStripMenuItem.Name = "cloneToGitHubToolStripMenuItem";
-            this.cloneToGitHubToolStripMenuItem.Size = new System.Drawing.Size(140, 25);
+            this.cloneToGitHubToolStripMenuItem.Size = new System.Drawing.Size(160, 25);
             this.cloneToGitHubToolStripMenuItem.Text = "Clone to GitHub";
+            this.cloneToGitHubToolStripMenuItem.Click += new System.EventHandler(this.cloneToGitHubToolStripMenuItem_Click);
             // 
             // MainPage
             // 
@@ -305,25 +315,25 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bugSolutionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bugEntryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMamberToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUserRoleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblCurrentUser;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ToolStripMenuItem cloneToGitHubToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem bugSolutionToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem bugEntryToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem bugToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem cloneToGitHubToolStripMenuItem;
     }
 }
 
