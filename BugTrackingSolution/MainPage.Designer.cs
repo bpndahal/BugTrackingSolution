@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cloneToGitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -220,6 +221,7 @@
             this.bugToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.helpToolStripMenuItem,
+            this.cloneToGitHubToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -264,6 +266,13 @@
             this.panel4.Size = new System.Drawing.Size(1000, 358);
             this.panel4.TabIndex = 18;
             // 
+            // cloneToGitHubToolStripMenuItem
+            // 
+            this.cloneToGitHubToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.cloneToGitHubToolStripMenuItem.Name = "cloneToGitHubToolStripMenuItem";
+            this.cloneToGitHubToolStripMenuItem.Size = new System.Drawing.Size(140, 25);
+            this.cloneToGitHubToolStripMenuItem.Text = "Clone to GitHub";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +282,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -314,6 +323,7 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblCurrentUser;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ToolStripMenuItem cloneToGitHubToolStripMenuItem;
     }
 }
 
