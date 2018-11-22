@@ -102,6 +102,12 @@
     <Compile Include="RegisterBugSolution.Designer.cs">
       <DependentUpon>RegisterBugSolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BugEntryForm.resx">
       <DependentUpon>BugEntryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterBugSolution.resx">
       <DependentUpon>RegisterBugSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

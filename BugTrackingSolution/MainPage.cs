@@ -65,5 +65,11 @@ namespace BugTrackingSolution
             LoginForm frm = new LoginForm();
             frm.Show();
         }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm frm = new ReportForm();
+            frm.Show();
+        }
     }
 }
