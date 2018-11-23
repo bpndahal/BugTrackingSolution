@@ -76,5 +76,16 @@ namespace BugTrackingSolution
         {
             System.Diagnostics.Process.Start("https://github.com/bpndahal/BugTrackingSolution");
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("E:/ASE Project/BugTrackingSolution/Bug Tracking System Help File.pdf");
+       
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

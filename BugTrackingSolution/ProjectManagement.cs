@@ -72,64 +72,86 @@ namespace BugTrackingSolution
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbpname.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (datestart.Text == "")
+                MessageBox.Show("Please Select Start Date");
+            else if (dateend.Text == "")
+                MessageBox.Show("Please Select End Date");
+            else if (txtdescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                if (cmbpname.Text == "")
+                try
                 {
-                    MessageBox.Show("Please Provide Project Name");
-                    cmbpname.Focus();
-                }
-                else if (txtdescription.Text == "")
-                {
-                    MessageBox.Show("Please Provide Description for " + cmbpname.Text);
-                    txtdescription.Focus();
-                }
-                else if (datestart.Text == dateend.Text)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure the project will complete in a single day", "Consider the Project Interval", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.No)
+                    if (cmbpname.Text == "")
                     {
-                        dateend.Focus();
+                        MessageBox.Show("Please Provide Project Name");
+                        cmbpname.Focus();
+                    }
+                    else if (txtdescription.Text == "")
+                    {
+                        MessageBox.Show("Please Provide Description for " + cmbpname.Text);
+                        txtdescription.Focus();
+                    }
+                    else if (datestart.Text == dateend.Text)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Are you sure the project will complete in a single day", "Consider the Project Interval", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.No)
+                        {
+                            dateend.Focus();
+                        }
+                        else
+                        {
+                            addProject();
+                        }
                     }
                     else
                     {
                         addProject();
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    addProject();
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbpname.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (datestart.Text == "")
+                MessageBox.Show("Please Select Start Date");
+            else if (dateend.Text == "")
+                MessageBox.Show("Please Select End Date");
+            else if (txtdescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businessLogicClass.manageProjects(projectId, cmbpname.Text, Convert.ToDateTime(datestart.Text), Convert.ToDateTime(dateend.Text), txtdescription.Text, 2);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("PROJECT INFORMATION HAS BEEN SUCCESSFULLY UPDATED");
-                    dgvProjectInformation.DataSource = projectClass.getAllProjects();
-                    AssistantClass.makeFieldsBlank(gbprojectmanage);
+                    bool result = businessLogicClass.manageProjects(projectId, cmbpname.Text, Convert.ToDateTime(datestart.Text), Convert.ToDateTime(dateend.Text), txtdescription.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("PROJECT INFORMATION HAS BEEN SUCCESSFULLY UPDATED");
+                        dgvProjectInformation.DataSource = projectClass.getAllProjects();
+                        AssistantClass.makeFieldsBlank(gbprojectmanage);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON UPDATING PROJECT INFORMATION");
+                        dgvProjectInformation.DataSource = projectClass.getAllProjects();
+                        AssistantClass.makeFieldsBlank(gbprojectmanage);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR ON UPDATING PROJECT INFORMATION");
-                    dgvProjectInformation.DataSource = projectClass.getAllProjects();
-                    AssistantClass.makeFieldsBlank(gbprojectmanage);
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

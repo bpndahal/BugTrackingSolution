@@ -280,6 +280,7 @@
             this.label8.Size = new System.Drawing.Size(241, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "Register Bug Solution";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // btncancel
             // 
@@ -314,7 +315,7 @@
             this.Controls.Add(this.gbbugsolninfo);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterBugSolution";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterBugSolution";

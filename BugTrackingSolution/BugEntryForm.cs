@@ -62,73 +62,124 @@ namespace BugTrackingSolution
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbProjectName.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (datedate.Text == "")
+                MessageBox.Show("Please Select Date");
+            else if (cmbBugIdentifiedBy.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (txtclasslibrary.Text == "")
+                MessageBox.Show("Please Provide Class Library");
+            else if (txtclass.Text == "")
+                MessageBox.Show("Please Provide Class");
+            else if (txtmethod.Text == "")
+                MessageBox.Show("Please Provide Method");
+            else if (txtlinenumber.Text == "")
+                MessageBox.Show("Please Provide Line Number");
+            else if (txtblock.Text == "")
+                MessageBox.Show("Please Provide Block");
+            else if (txtbugdetails.Text == "")
+                MessageBox.Show("Please Provide Method");
+            else if (txtcode.Text == "")
+                MessageBox.Show("Please Provide Code");
+            else if (picsnap.Image == null)
+                MessageBox.Show("Please Upload Screenshot of Bug Occured");
+            else
             {
 
-                bool result = businessLogicClass.manageBugs(0, Convert.ToDateTime(datedate.Text), Convert.ToInt32(cmbBugIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProjectName.SelectedValue.ToString()), txtclasslibrary.Text, txtclass.Text, txtmethod.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, AssistantClass.imageConverter(picsnap), txtcode.Text, 1);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("NEW BUG RECORD HAS BEEN ADDED");
-                    dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlsnapinfo);
-                    AssistantClass.makeFieldsBlank(pnlbuginfo);
 
-                    picsnap.Image = null;
+                    bool result = businessLogicClass.manageBugs(0, Convert.ToDateTime(datedate.Text), Convert.ToInt32(cmbBugIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProjectName.SelectedValue.ToString()), txtclasslibrary.Text, txtclass.Text, txtmethod.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, AssistantClass.imageConverter(picsnap), txtcode.Text, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW BUG RECORD HAS BEEN ADDED");
+                        dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlsnapinfo);
+                        AssistantClass.makeFieldsBlank(pnlbuginfo);
+
+                        picsnap.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN ADDING BUG RECORD");
+                        dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlsnapinfo);
+                        AssistantClass.makeFieldsBlank(pnlbuginfo);
+                        picsnap.Image = null;
+                    }
                 }
-                else
+                catch (System.NullReferenceException)
                 {
-                    MessageBox.Show("ERROR IN ADDING BUG RECORD");
-                    dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlsnapinfo);
-                    AssistantClass.makeFieldsBlank(pnlbuginfo);
-                    picsnap.Image = null;
+                    MessageBox.Show("Some fields cann't be null");
                 }
-            }
-            catch (System.NullReferenceException)
-            {
-                MessageBox.Show("Some fields cann't be null");
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                //MessageBox.Show(ex.Message);
-                throw ex;
+                    //MessageBox.Show(ex.Message);
+                    throw ex;
+                }
             }
         }
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbProjectName.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (datedate.Text == "")
+                MessageBox.Show("Please Select Date");
+            else if (cmbBugIdentifiedBy.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (txtclasslibrary.Text == "")
+                MessageBox.Show("Please Provide Class Library");
+            else if (txtclass.Text == "")
+                MessageBox.Show("Please Provide Class");
+            else if (txtmethod.Text == "")
+                MessageBox.Show("Please Provide Method");
+            else if (txtlinenumber.Text == "")
+                MessageBox.Show("Please Provide Line Number");
+            else if (txtblock.Text == "")
+                MessageBox.Show("Please Provide Block");
+            else if (txtbugdetails.Text == "")
+                MessageBox.Show("Please Provide Method");
+            else if (txtcode.Text == "")
+                MessageBox.Show("Please Provide Code");
+            else if (picsnap.Image == null)
+                MessageBox.Show("Please Upload Screenshot of Bug Occured");
+            else
             {
-
-                bool result = businessLogicClass.manageBugs(bugId, Convert.ToDateTime(datedate.Text), Convert.ToInt32(cmbBugIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProjectName.SelectedValue.ToString()), txtclasslibrary.Text, txtclass.Text, txtmethod.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, AssistantClass.imageConverter(picsnap), txtcode.Text, 2);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("EXISTING BUG RECORD HAS BEEN UPDATED");
-                    dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlsnapinfo);
-                    AssistantClass.makeFieldsBlank(pnlbuginfo);
 
-                    picsnap.Image = null;
+                    bool result = businessLogicClass.manageBugs(bugId, Convert.ToDateTime(datedate.Text), Convert.ToInt32(cmbBugIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProjectName.SelectedValue.ToString()), txtclasslibrary.Text, txtclass.Text, txtmethod.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, AssistantClass.imageConverter(picsnap), txtcode.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("EXISTING BUG RECORD HAS BEEN UPDATED");
+                        dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlsnapinfo);
+                        AssistantClass.makeFieldsBlank(pnlbuginfo);
+
+                        picsnap.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN UPDATING BUG RECORD");
+                        dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlsnapinfo);
+                        AssistantClass.makeFieldsBlank(pnlbuginfo);
+                        picsnap.Image = null;
+                    }
                 }
-                else
+                catch (System.NullReferenceException)
                 {
-                    MessageBox.Show("ERROR IN UPDATING BUG RECORD");
-                    dgvDetectedBugInfo.DataSource = bugEntryClass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlsnapinfo);
-                    AssistantClass.makeFieldsBlank(pnlbuginfo);
-                    picsnap.Image = null;
+                    MessageBox.Show("Some fields cann't be null");
                 }
-            }
-            catch (System.NullReferenceException)
-            {
-                MessageBox.Show("Some fields cann't be null");
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                //MessageBox.Show(ex.Message);
-                throw ex;
+                    //MessageBox.Show(ex.Message);
+                    throw ex;
+                }
             }
         }
 
@@ -179,7 +230,7 @@ namespace BugTrackingSolution
             {
                 bugId = Convert.ToInt32(dgvDetectedBugInfo.SelectedRows[0].Cells["bugId"].Value.ToString());
                 datedate.Text = dgvDetectedBugInfo.SelectedRows[0].Cells["bugIdentifiedDate"].Value.ToString();
-                cmbBugIdentifiedBy.Text = dgvDetectedBugInfo.SelectedRows[0].Cells["projectName"].Value.ToString();
+                cmbBugIdentifiedBy.Text = dgvDetectedBugInfo.SelectedRows[0].Cells["memberName"].Value.ToString();
                 cmbProjectName.Text = dgvDetectedBugInfo.SelectedRows[0].Cells["projectName"].Value.ToString();
                 txtclasslibrary.Text = dgvDetectedBugInfo.SelectedRows[0].Cells["classLibraryName"].Value.ToString();
                 txtclass.Text = dgvDetectedBugInfo.SelectedRows[0].Cells["className"].Value.ToString();

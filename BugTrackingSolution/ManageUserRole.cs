@@ -31,52 +31,64 @@ namespace BugTrackingSolution
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-             try
+            if (txtuserrole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (txtdescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businessLogicClass.manageUserRole(0, txtuserrole.Text, txtdescription.Text, 1);
-                if(result==true)
+                try
                 {
-                    MessageBox.Show("NEW USER ROLE HAS BEEN ADDED");
-                    dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+                    bool result = businessLogicClass.manageUserRole(0, txtuserrole.Text, txtdescription.Text, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW USER ROLE HAS BEEN ADDED");
+                        dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN ADDING USER ROLE");
+                        dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR IN ADDING USER ROLE");
-                    dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+
+                    MessageBox.Show(ex.Message);
                 }
             }
-             catch (Exception ex)
-             {
-
-                 MessageBox.Show(ex.Message);
-             }
         }
-
         private void btnedit_Click(object sender, EventArgs e)
         {
-
-            try
+            if (txtuserrole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (txtdescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businessLogicClass.manageUserRole(userRoleId, txtuserrole.Text, txtdescription.Text, 2);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("EXISTING USER ROLE HAS BEEN UPDATED");
-                    dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+                    bool result = businessLogicClass.manageUserRole(userRoleId, txtuserrole.Text, txtdescription.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("EXISTING USER ROLE HAS BEEN UPDATED");
+                        dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN UPDATING USER ROLE");
+                        dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(gbUserRoleInfo);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR IN UPDATING USER ROLE");
-                    dgvUserRole.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(gbUserRoleInfo);
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

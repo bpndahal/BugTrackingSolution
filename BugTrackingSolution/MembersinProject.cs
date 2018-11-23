@@ -64,18 +64,30 @@ namespace BugTrackingSolution
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            bool result = businessLogicClass.manageProjectMembers(0, Convert.ToInt32(cmbproject.SelectedValue.ToString()), Convert.ToInt32(cmbmember.SelectedValue.ToString()), cmbmemberrole.Text, txtresposibilities.Text, 1);
-            if (result == true)
-            {
-                MessageBox.Show("NEW MEMBER HAS BEEN ADDED TO THE PROJECT");
-                dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMembersInProejct);
-            }
+            if (cmbproject.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (cmbmember.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (cmbmemberrole.Text == "")
+                MessageBox.Show("Please Select Member Role");
+            else if (txtresposibilities.Text == "")
+                MessageBox.Show("Please Provide Description");
             else
             {
-                MessageBox.Show("ERROR IN ADDING MEMBER IN THE PROJECT");
-                dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMembersInProejct);
+
+                bool result = businessLogicClass.manageProjectMembers(0, Convert.ToInt32(cmbproject.SelectedValue.ToString()), Convert.ToInt32(cmbmember.SelectedValue.ToString()), cmbmemberrole.Text, txtresposibilities.Text, 1);
+                if (result == true)
+                {
+                    MessageBox.Show("NEW MEMBER HAS BEEN ADDED TO THE PROJECT");
+                    dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMembersInProejct);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR IN ADDING MEMBER IN THE PROJECT");
+                    dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMembersInProejct);
+                }
             }
         }
 
@@ -86,19 +98,30 @@ namespace BugTrackingSolution
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-
-            bool result = businessLogicClass.manageProjectMembers(memberId, Convert.ToInt32(cmbproject.SelectedValue.ToString()), Convert.ToInt32(cmbmember.SelectedValue.ToString()), cmbmemberrole.Text, txtresposibilities.Text, 2);
-            if (result == true)
-            {
-                MessageBox.Show("MEMBER INFORMATION IN THE PROJECT HAS BEEN MODIFIED");
-                dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMembersInProejct);
-            }
+            if (cmbproject.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (cmbmember.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (cmbmemberrole.Text == "")
+                MessageBox.Show("Please Select Member Role");
+            else if (txtresposibilities.Text == "")
+                MessageBox.Show("Please Provide Description");
             else
             {
-                MessageBox.Show("ERROR IN MODIFYING MEMBER INFORMATION OF THE PROJECT");
-                dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMembersInProejct);
+
+                bool result = businessLogicClass.manageProjectMembers(memberId, Convert.ToInt32(cmbproject.SelectedValue.ToString()), Convert.ToInt32(cmbmember.SelectedValue.ToString()), cmbmemberrole.Text, txtresposibilities.Text, 2);
+                if (result == true)
+                {
+                    MessageBox.Show("MEMBER INFORMATION IN THE PROJECT HAS BEEN MODIFIED");
+                    dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMembersInProejct);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR IN MODIFYING MEMBER INFORMATION OF THE PROJECT");
+                    dgvMembersInProejctInformation.DataSource = projectMemberClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMembersInProejct);
+                }
             }
         }
 

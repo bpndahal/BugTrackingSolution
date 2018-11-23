@@ -48,11 +48,11 @@
             this.manageUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cloneToGitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cloneToGitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -116,6 +116,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
@@ -129,14 +130,14 @@
             // bugSolutionToolStripMenuItem
             // 
             this.bugSolutionToolStripMenuItem.Name = "bugSolutionToolStripMenuItem";
-            this.bugSolutionToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.bugSolutionToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.bugSolutionToolStripMenuItem.Text = "Bug Solution";
             this.bugSolutionToolStripMenuItem.Click += new System.EventHandler(this.bugSolutionToolStripMenuItem_Click);
             // 
             // bugEntryToolStripMenuItem
             // 
             this.bugEntryToolStripMenuItem.Name = "bugEntryToolStripMenuItem";
-            this.bugEntryToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.bugEntryToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.bugEntryToolStripMenuItem.Text = "Bug Entry";
             this.bugEntryToolStripMenuItem.Click += new System.EventHandler(this.bugEntryToolStripMenuItem_Click);
             // 
@@ -237,6 +238,15 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // cloneToGitHubToolStripMenuItem
+            // 
+            this.cloneToGitHubToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.cloneToGitHubToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cloneToGitHubToolStripMenuItem.Image")));
+            this.cloneToGitHubToolStripMenuItem.Name = "cloneToGitHubToolStripMenuItem";
+            this.cloneToGitHubToolStripMenuItem.Size = new System.Drawing.Size(160, 25);
+            this.cloneToGitHubToolStripMenuItem.Text = "Clone to GitHub";
+            this.cloneToGitHubToolStripMenuItem.Click += new System.EventHandler(this.cloneToGitHubToolStripMenuItem_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.menuStrip1);
@@ -274,15 +284,6 @@
             this.panel4.Size = new System.Drawing.Size(1000, 358);
             this.panel4.TabIndex = 18;
             // 
-            // cloneToGitHubToolStripMenuItem
-            // 
-            this.cloneToGitHubToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.cloneToGitHubToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cloneToGitHubToolStripMenuItem.Image")));
-            this.cloneToGitHubToolStripMenuItem.Name = "cloneToGitHubToolStripMenuItem";
-            this.cloneToGitHubToolStripMenuItem.Size = new System.Drawing.Size(160, 25);
-            this.cloneToGitHubToolStripMenuItem.Text = "Clone to GitHub";
-            this.cloneToGitHubToolStripMenuItem.Click += new System.EventHandler(this.cloneToGitHubToolStripMenuItem_Click);
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +297,7 @@
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainPage_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

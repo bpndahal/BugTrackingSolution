@@ -39,52 +39,88 @@ namespace BugTrackingSolution
 
         private void btnadd_Click(object sender, EventArgs e)
         {
+            if (cmbuserrole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (cmbfullname.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (txtusername.Text == "")
+                MessageBox.Show("Please Provide username");
+            else if (txtpassword.Text == "")
+                MessageBox.Show("Please Provide Password");
 
-            try
-            {
-                bool result = businessLogicClass.manageUsers(0, Convert.ToInt32(cmbuserrole.SelectedValue.ToString()), Convert.ToInt32(cmbfullname.SelectedValue.ToString()), txtusername.Text, txtpassword.Text, 1);
-                if (result == true)
-                {
-                    MessageBox.Show("NEW USER HAS BEEN ADDED");
-                    dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(dbUserInfo);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR ON ADDING NEW USER");
-                    dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(dbUserInfo);
-                }
-            }
-            catch (Exception ex)
+            else if (txtcpassword.Text == "")
+                MessageBox.Show("Please Provide Confirm Password");
+
+            else if (txtcpassword.Text != txtpassword.Text)
+                MessageBox.Show("Password didnot Match");
+
+            else
             {
 
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    bool result = businessLogicClass.manageUsers(0, Convert.ToInt32(cmbuserrole.SelectedValue.ToString()), Convert.ToInt32(cmbfullname.SelectedValue.ToString()), txtusername.Text, txtpassword.Text, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW USER HAS BEEN ADDED");
+                        dgvUserInformation.DataSource = userClass.getAllUsers();
+                        AssistantClass.makeFieldsBlank(dbUserInfo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON ADDING NEW USER");
+                        dgvUserInformation.DataSource = userClass.getAllUsers();
+                        AssistantClass.makeFieldsBlank(dbUserInfo);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                bool result = businessLogicClass.manageUsers(userId, Convert.ToInt32(cmbuserrole.SelectedValue.ToString()), Convert.ToInt32(cmbfullname.SelectedValue.ToString()), txtusername.Text, txtpassword.Text, 2);
-                if (result == true)
-                {
-                    MessageBox.Show("NEW USER HAS BEEN UPDATED");
-                    dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(dbUserInfo);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR ON ADDING NEW UPDAED");
-                    dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(dbUserInfo);
-                }
-            }
-            catch (Exception ex)
-            {
+            if (cmbuserrole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (cmbfullname.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (txtusername.Text == "")
+                MessageBox.Show("Please Provide username");
+            else if (txtpassword.Text == "")
+                MessageBox.Show("Please Provide Password");
 
-                MessageBox.Show(ex.Message);
+            else if (txtcpassword.Text == "")
+                MessageBox.Show("Please Provide Confirm Password");
+
+            else if (txtcpassword.Text != txtpassword.Text)
+                MessageBox.Show("Password didnot Match");
+
+            else
+            {
+                try
+                {
+                    bool result = businessLogicClass.manageUsers(userId, Convert.ToInt32(cmbuserrole.SelectedValue.ToString()), Convert.ToInt32(cmbfullname.SelectedValue.ToString()), txtusername.Text, txtpassword.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW USER HAS BEEN UPDATED");
+                        dgvUserInformation.DataSource = userClass.getAllUsers();
+                        AssistantClass.makeFieldsBlank(dbUserInfo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON ADDING NEW UPDAED");
+                        dgvUserInformation.DataSource = userClass.getAllUsers();
+                        AssistantClass.makeFieldsBlank(dbUserInfo);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

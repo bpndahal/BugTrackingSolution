@@ -43,6 +43,9 @@ namespace BugTrackingSolution
                     MainPage DAS = new MainPage();
                     this.Hide();
                     DAS.lblCurrentUser.Text = txtPassword.Text;
+                    DAS.userToolStripMenuItem.Enabled = false;
+                    DAS.memberToolStripMenuItem.Enabled = false;
+                    DAS.projectToolStripMenuItem.Enabled = false;
                     DAS.Show();
                 }
                 if (Role == "Tester")
@@ -50,6 +53,10 @@ namespace BugTrackingSolution
                     MainPage DAS = new MainPage(); this.Hide();
                     
                     DAS.Show();
+                    DAS.userToolStripMenuItem.Enabled = false;
+                    DAS.memberToolStripMenuItem.Enabled = false;
+                    DAS.projectToolStripMenuItem.Enabled = false;
+                    DAS.bugEntryToolStripMenuItem.Enabled = false;
                     DAS.lblCurrentUser.Text = txtPassword.Text;
                     this.Hide();
                 }
@@ -59,6 +66,11 @@ namespace BugTrackingSolution
 
                 MessageBox.Show("Invalid User Name or Password");
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
